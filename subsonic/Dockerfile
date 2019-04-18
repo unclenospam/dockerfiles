@@ -8,8 +8,9 @@
 
 FROM java:8-jre
 
-MAINTAINER dan.isla@gmail.com
+MAINTAINER sjestus@gmail.com
 
+ENV SUBSONIC_VERSION=6.1.5
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -44,4 +45,4 @@ RUN mkdir -p /opt/app
 ADD startup.sh /opt/app/
 RUN chmod +x /opt/app/startup.sh
 
-ENTRYPOINT /opt/app/startup.sh 1000
+ENTRYPOINT /opt/app/startup.sh 1001
